@@ -26,5 +26,3 @@ hey it's heddie
 hey it's hasmath
 hey c'est mon deuxieme commit 
 hey it's elodie
-
-test revert
