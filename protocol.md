@@ -25,3 +25,4 @@ screening.
 hey it's heddie
 hey it's hasmath
 hey c'est mon deuxieme commit 
+- Elodie: Include an additional quality control step before analyzing knockout efficiency.
