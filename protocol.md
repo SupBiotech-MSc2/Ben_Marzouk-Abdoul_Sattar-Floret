@@ -1,6 +1,10 @@
 # CRISPR Knockout Screening Protocol
 
+<<<<<<< HEAD
 **Status:** Under review
+=======
+**Status:** Under review by Driver 2
+>>>>>>> feature/status-conflict
 
 ## Overview
 Protocol for generating single-gene knockouts in HEK293 cells using
