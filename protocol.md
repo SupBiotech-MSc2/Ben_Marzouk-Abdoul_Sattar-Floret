@@ -2,7 +2,7 @@ hey it's hasmath
 hey c'est mon deuxieme commit
 hey it's elodi# CRISPR Knockout Screening Protocol
 
-**Status:** Draft v1
+**Status:** Draft v2
 
 ## Overview
 Protocol for generating single-gene knockouts in HEK293 cells using
@@ -26,5 +26,3 @@ screening.
 <!-- add your own line below, one per teammate -->
 hey it's hasmath
 hey c'est mon deuxieme commit
-hey it's elodie
-
