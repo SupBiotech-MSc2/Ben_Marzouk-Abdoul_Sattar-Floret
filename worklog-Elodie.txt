@@ -1,1 +1,15 @@
 Début du TP Git - Driver 1
+git clone
+git status
+git add protocol.md
+git commit -m 'feat: add team note from Elodie'
+git push origin main
+git pull origin main
+git restore protocol.md
+git reset HEAD~1
+git revert
+git log --oneline --graph --all
+git switch -c feature/elodie-idea
+git merge
+git add protocol.md
+git commit -m 'merge: resolve status conflict'
