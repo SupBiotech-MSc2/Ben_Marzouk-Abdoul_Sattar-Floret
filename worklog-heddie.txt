@@ -1,0 +1,784 @@
+Sur la branche main
+Votre branche est en avance sur 'origin/main' de 1 commit.
+  (utilisez "git push" pour publier vos commits locaux)
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+	.Rhistory
+	worklog-heddie.txt
+
+aucune modification ajoutée à la validation mais des fichiers non suivis sont présents (utilisez "git add" pour les suivre)
+Sur la branche main
+Votre branche est en avance sur 'origin/main' de 1 commit.
+  (utilisez "git push" pour publier vos commits locaux)
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+	.Rhistory
+	worklog-heddie.txt
+
+aucune modification ajoutée à la validation mais des fichiers non suivis sont présents (utilisez "git add" pour les suivre)
+$ git log --oneline
+e470e9b feat: I added my name in the document
+531bfa7 Initial commit
+$ git log --oneline
+e470e9b feat: I added my name in the document
+531bfa7 Initial commit
+$ git status
+Sur la branche main
+Votre branche est à jour avec 'origin/main'.
+
+Modifications qui seront validées :
+  (utilisez "git restore --staged <fichier>..." pour désindexer)
+	modifié :         protocol.md
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+	.Rhistory
+	worklog-heddie.txt
+
+$ git add protocol.md
+$ git commit -m "feat: add second team note from heddie"
+[main 4cd72b6] feat: add second team note from heddie
+ 1 file changed, 1 insertion(+)
+$ git push origin main
+To https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret.git
+   97b432c..4cd72b6  main -> main
+$ git add protocol.md
+$ git log --oneline
+65fcce6 feat: add team note from Elodie
+13985e9 feat: modification of heddie's second commit from Hasmat
+4cd72b6 feat: add second team note from heddie
+97b432c update
+e470e9b feat: I added my name in the document
+531bfa7 Initial commit
+$ git push origin main
+To https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret.git
+ ! [rejected]        main -> main (fetch first)
+erreur : impossible de pousser des références vers 'https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret.git'
+astuce : Les mises à jour ont été rejetées car le distant contient du travail que vous
+astuce : n'avez pas localement. La cause probable est que quelqu'un a déjà poussé sur la même réf.
+astuce : depuis un autre dépôt. Si vous souhaitez intégrer les changements distants,
+astuce : "utilisez 'git pull' avant de pousser à nouveau.
+astuce : Voir la 'Note à propos des avances rapides' dans 'git push --help' pour plus d'information.
+$ git revert --continue
+$ git log --oneline
+fbf4a5b Revert "feat: I added my name in the document"
+65fcce6 feat: add team note from Elodie
+13985e9 feat: modification of heddie's second commit from Hasmat
+4cd72b6 feat: add second team note from heddie
+97b432c update
+e470e9b feat: I added my name in the document
+531bfa7 Initial commit
+$ git pull --no-rebase --no-edit origin main
+Depuis https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+ * branch            main       -> FETCH_HEAD
+   65fcce6..12c8f30  main       -> origin/main
+Fusion automatique de protocol.md
+CONFLIT (contenu) : Conflit de fusion dans protocol.md
+La fusion automatique a échoué ; réglez les conflits et validez le résultat.
+$ git log --oneline origin/main -3
+12c8f30 chore: bump status to draft v2
+8c8b933 Revert "feat: add team note from Elodie"
+65fcce6 feat: add team note from Elodie
+$ git add protocol.md
+$ git commit --no-edit
+$ git push origin main
+To https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret.git
+   12c8f30..6f679a3  main -> main
+$ git add protocol.md
+$ git commit -m feat: restore team note from heddie
+[main 8e32f37] feat: restore team note from heddie
+ 1 file changed, 1 insertion(+)
+$ git push origin main
+To https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret.git
+   6f679a3..8e32f37  main -> main
+$ git log --oneline --graph
+* 8e32f37 feat: restore team note from heddie
+*   6f679a3 Merge branch 'main' of https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+|\  
+| * 12c8f30 chore: bump status to draft v2
+| * 8c8b933 Revert "feat: add team note from Elodie"
+* | fbf4a5b Revert "feat: I added my name in the document"
+|/  
+* 65fcce6 feat: add team note from Elodie
+* 13985e9 feat: modification of heddie's second commit from Hasmat
+* 4cd72b6 feat: add second team note from heddie
+* 97b432c update
+* e470e9b feat: I added my name in the document
+* 531bfa7 Initial commit
+$ git status
+Sur la branche main
+Votre branche est à jour avec 'origin/main'.
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+	.Rhistory
+	worklog-heddie.txt
+
+aucune modification ajoutée à la validation mais des fichiers non suivis sont présents (utilisez "git add" pour les suivre)
+$ git restore protocol.md
+$ git status
+Sur la branche main
+Votre branche est à jour avec 'origin/main'.
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+	.Rhistory
+	worklog-heddie.txt
+
+aucune modification ajoutée à la validation mais des fichiers non suivis sont présents (utilisez "git add" pour les suivre)
+$ git status
+Sur la branche main
+Votre branche est à jour avec 'origin/main'.
+
+Modifications qui ne seront pas validées :
+  (utilisez "git add <fichier>..." pour mettre à jour ce qui sera validé)
+  (utilisez "git restore <fichier>..." pour annuler les modifications dans le répertoire de travail)
+	modifié :         protocol.md
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+	.Rhistory
+	worklog-heddie.txt
+
+aucune modification n'a été ajoutée à la validation (utilisez "git add" ou "git commit -a")
+$ git restore protocol.md
+$ git status
+Sur la branche main
+Votre branche est à jour avec 'origin/main'.
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+	.Rhistory
+	worklog-heddie.txt
+
+aucune modification ajoutée à la validation mais des fichiers non suivis sont présents (utilisez "git add" pour les suivre)
+$ git add protocol.md
+$ git commit -m test: throwaway commit
+[main a76e9e9] test: throwaway commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+$ git log --oneline
+a76e9e9 test: throwaway commit
+8e32f37 feat: restore team note from heddie
+6f679a3 Merge branch 'main' of https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+fbf4a5b Revert "feat: I added my name in the document"
+12c8f30 chore: bump status to draft v2
+8c8b933 Revert "feat: add team note from Elodie"
+65fcce6 feat: add team note from Elodie
+13985e9 feat: modification of heddie's second commit from Hasmat
+4cd72b6 feat: add second team note from heddie
+97b432c update
+e470e9b feat: I added my name in the document
+531bfa7 Initial commit
+$ git reset HEAD~1
+Modifications non indexées après reset :
+M	protocol.md
+$ git status
+Sur la branche main
+Votre branche est à jour avec 'origin/main'.
+
+Modifications qui ne seront pas validées :
+  (utilisez "git add <fichier>..." pour mettre à jour ce qui sera validé)
+  (utilisez "git restore <fichier>..." pour annuler les modifications dans le répertoire de travail)
+	modifié :         protocol.md
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+	.Rhistory
+	worklog-heddie.txt
+
+aucune modification n'a été ajoutée à la validation (utilisez "git add" ou "git commit -a")
+$ git restore protocol.md
+$ git status
+Sur la branche main
+Votre branche est à jour avec 'origin/main'.
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+	.Rhistory
+	worklog-heddie.txt
+
+aucune modification ajoutée à la validation mais des fichiers non suivis sont présents (utilisez "git add" pour les suivre)
+$ git log
+commit 8e32f379178f6cf39d57a61a8d123dab2d850a8a
+Author: Heddie BEN MARZOUK <heddie.benmarzouk.uvsq.fr>
+Date:   Mon Nov 16 19:18:20 2026 +0100
+
+    feat: restore team note from heddie
+
+commit 6f679a320a8d7b2ca2f122a17f1601ae3d1a28e0
+Merge: fbf4a5b 12c8f30
+Author: Heddie BEN MARZOUK <heddie.benmarzouk.uvsq.fr>
+Date:   Mon Nov 16 19:14:13 2026 +0100
+
+    Merge branch 'main' of https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+    
+    # Conflicts:
+    #       protocol.md
+
+commit fbf4a5bc84e0fa80ca1c619b8b480ffd1023e2f9
+Author: Heddie BEN MARZOUK <heddie.benmarzouk.uvsq.fr>
+Date:   Mon Nov 16 19:07:34 2026 +0100
+
+    Revert "feat: I added my name in the document"
+    
+    This reverts commit e470e9b48b67587955b6be6b7d32d6c0b67f3c0f.
+
+commit 12c8f3007b5493feff533850e40447d60fdce3a4
+Author: ElodieFl <elodieceline.floret@gmail.com>
+Date:   Mon Nov 16 18:57:43 2026 +0100
+
+    chore: bump status to draft v2
+
+commit 8c8b933fd3c21bf2ec0ff49ca405d143fe010500
+Author: ElodieFl <elodieceline.floret@gmail.com>
+Date:   Mon Nov 16 18:38:37 2026 +0100
+
+    Revert "feat: add team note from Elodie"
+    
+    This reverts commit 65fcce626cf2bd7664bf73a86592fa30e3658430.
+
+commit 65fcce626cf2bd7664bf73a86592fa30e3658430
+Author: ElodieFl <elodieceline.floret@gmail.com>
+Date:   Mon Nov 16 18:20:35 2026 +0100
+
+    feat: add team note from Elodie
+
+commit 13985e9c1952ebffd5f7ee0cbe84931687dacf98
+Author: HasAbdoul <habdoul2003@gmail.com>
+Date:   Mon Nov 16 17:56:56 2026 +0100
+
+    feat: modification of heddie's second commit from Hasmat
+
+commit 4cd72b6438e9164b3a6222644923b04f0572dd24
+Author: Heddie BEN MARZOUK <heddie.benmarzouk.uvsq.fr>
+Date:   Mon Nov 16 17:47:14 2026 +0100
+
+    feat: add second team note from heddie
+
+commit 97b432c4c7c482dfd84bf7e07842f3767ed807f0
+Author: HasAbdoul <habdoul2003@gmail.com>
+Date:   Mon Nov 16 16:44:01 2026 +0100
+
+    update
+
+commit e470e9b48b67587955b6be6b7d32d6c0b67f3c0f
+Author: Heddie BEN MARZOUK <heddie.benmarzouk.uvsq.fr>
+Date:   Thu Sep 24 12:38:03 2026 +0200
+
+    feat: I added my name in the document
+
+commit 531bfa78a9309ca80029f5d8ff1eef2808559779
+Author: ElodieFl <elodieceline.floret@gmail.com>
+Date:   Thu Sep 24 11:49:04 2026 +0200
+
+    Initial commit
+$ git log --oneline
+8e32f37 feat: restore team note from heddie
+6f679a3 Merge branch 'main' of https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+fbf4a5b Revert "feat: I added my name in the document"
+12c8f30 chore: bump status to draft v2
+8c8b933 Revert "feat: add team note from Elodie"
+65fcce6 feat: add team note from Elodie
+13985e9 feat: modification of heddie's second commit from Hasmat
+4cd72b6 feat: add second team note from heddie
+97b432c update
+e470e9b feat: I added my name in the document
+531bfa7 Initial commit
+$ git show fbf4a5b
+commit fbf4a5bc84e0fa80ca1c619b8b480ffd1023e2f9
+Author: Heddie BEN MARZOUK <heddie.benmarzouk.uvsq.fr>
+Date:   Mon Nov 16 19:07:34 2026 +0100
+
+    Revert "feat: I added my name in the document"
+    
+    This reverts commit e470e9b48b67587955b6be6b7d32d6c0b67f3c0f.
+
+diff --git a/protocol.md b/protocol.md
+index 7bd2cfe..6ce8db5 100644
+--- a/protocol.md
++++ b/protocol.md
+@@ -1,4 +1,6 @@
+-# CRISPR Knockout Screening Protocol
++hey it's hasmath
++hey c'est mon deuxieme commit
++hey it's elodi# CRISPR Knockout Screening Protocol
+ 
+ **Status:** Draft v1
+ 
+@@ -22,7 +24,7 @@ screening.
+ 
+ ## Team Notes
+ <!-- add your own line below, one per teammate -->
+-hey it's heddie
+ hey it's hasmath
+-hey c'est mon deuxieme commit 
++hey c'est mon deuxieme commit
+ hey it's elodie
++
+$ git diff
+diff --git a/protocol.md b/protocol.md
+index 2511964..1ddf821 100644
+--- a/protocol.md
++++ b/protocol.md
+@@ -27,3 +27,4 @@ screening.
+ hey it's heddie
+ hey it's hasmath
+ hey c'est mon deuxieme commit
++git diff
+$ git add protocol.md
+$ git diff --staged
+diff --git a/protocol.md b/protocol.md
+index 2511964..1ddf821 100644
+--- a/protocol.md
++++ b/protocol.md
+@@ -27,3 +27,4 @@ screening.
+ hey it's heddie
+ hey it's hasmath
+ hey c'est mon deuxieme commit
++git diff
+$ git restore --staged protocol.md
+$ git restore protocol.md
+$ git status
+Sur la branche main
+Votre branche est à jour avec 'origin/main'.
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+	.Rhistory
+	worklog-heddie.txt
+
+aucune modification ajoutée à la validation mais des fichiers non suivis sont présents (utilisez "git add" pour les suivre)
+$ git log
+commit 8e32f379178f6cf39d57a61a8d123dab2d850a8a
+Author: Heddie BEN MARZOUK <heddie.benmarzouk.uvsq.fr>
+Date:   Mon Nov 16 19:18:20 2026 +0100
+
+    feat: restore team note from heddie
+
+commit 6f679a320a8d7b2ca2f122a17f1601ae3d1a28e0
+Merge: fbf4a5b 12c8f30
+Author: Heddie BEN MARZOUK <heddie.benmarzouk.uvsq.fr>
+Date:   Mon Nov 16 19:14:13 2026 +0100
+
+    Merge branch 'main' of https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+    
+    # Conflicts:
+    #       protocol.md
+
+commit fbf4a5bc84e0fa80ca1c619b8b480ffd1023e2f9
+Author: Heddie BEN MARZOUK <heddie.benmarzouk.uvsq.fr>
+Date:   Mon Nov 16 19:07:34 2026 +0100
+
+    Revert "feat: I added my name in the document"
+    
+    This reverts commit e470e9b48b67587955b6be6b7d32d6c0b67f3c0f.
+
+commit 12c8f3007b5493feff533850e40447d60fdce3a4
+Author: ElodieFl <elodieceline.floret@gmail.com>
+Date:   Mon Nov 16 18:57:43 2026 +0100
+
+    chore: bump status to draft v2
+
+commit 8c8b933fd3c21bf2ec0ff49ca405d143fe010500
+Author: ElodieFl <elodieceline.floret@gmail.com>
+Date:   Mon Nov 16 18:38:37 2026 +0100
+
+    Revert "feat: add team note from Elodie"
+    
+    This reverts commit 65fcce626cf2bd7664bf73a86592fa30e3658430.
+
+commit 65fcce626cf2bd7664bf73a86592fa30e3658430
+Author: ElodieFl <elodieceline.floret@gmail.com>
+Date:   Mon Nov 16 18:20:35 2026 +0100
+
+    feat: add team note from Elodie
+
+commit 13985e9c1952ebffd5f7ee0cbe84931687dacf98
+Author: HasAbdoul <habdoul2003@gmail.com>
+Date:   Mon Nov 16 17:56:56 2026 +0100
+
+    feat: modification of heddie's second commit from Hasmat
+
+commit 4cd72b6438e9164b3a6222644923b04f0572dd24
+Author: Heddie BEN MARZOUK <heddie.benmarzouk.uvsq.fr>
+Date:   Mon Nov 16 17:47:14 2026 +0100
+
+    feat: add second team note from heddie
+
+commit 97b432c4c7c482dfd84bf7e07842f3767ed807f0
+Author: HasAbdoul <habdoul2003@gmail.com>
+Date:   Mon Nov 16 16:44:01 2026 +0100
+
+    update
+
+commit e470e9b48b67587955b6be6b7d32d6c0b67f3c0f
+Author: Heddie BEN MARZOUK <heddie.benmarzouk.uvsq.fr>
+Date:   Thu Sep 24 12:38:03 2026 +0200
+
+    feat: I added my name in the document
+
+commit 531bfa78a9309ca80029f5d8ff1eef2808559779
+Author: ElodieFl <elodieceline.floret@gmail.com>
+Date:   Thu Sep 24 11:49:04 2026 +0200
+
+    Initial commit
+$ git log --oneline
+8e32f37 feat: restore team note from heddie
+6f679a3 Merge branch 'main' of https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+fbf4a5b Revert "feat: I added my name in the document"
+12c8f30 chore: bump status to draft v2
+8c8b933 Revert "feat: add team note from Elodie"
+65fcce6 feat: add team note from Elodie
+13985e9 feat: modification of heddie's second commit from Hasmat
+4cd72b6 feat: add second team note from heddie
+97b432c update
+e470e9b feat: I added my name in the document
+531bfa7 Initial commit
+$ git show fbf4a5b
+commit fbf4a5bc84e0fa80ca1c619b8b480ffd1023e2f9
+Author: Heddie BEN MARZOUK <heddie.benmarzouk.uvsq.fr>
+Date:   Mon Nov 16 19:07:34 2026 +0100
+
+    Revert "feat: I added my name in the document"
+    
+    This reverts commit e470e9b48b67587955b6be6b7d32d6c0b67f3c0f.
+
+diff --git a/protocol.md b/protocol.md
+index 7bd2cfe..6ce8db5 100644
+--- a/protocol.md
++++ b/protocol.md
+@@ -1,4 +1,6 @@
+-# CRISPR Knockout Screening Protocol
++hey it's hasmath
++hey c'est mon deuxieme commit
++hey it's elodi# CRISPR Knockout Screening Protocol
+ 
+ **Status:** Draft v1
+ 
+@@ -22,7 +24,7 @@ screening.
+ 
+ ## Team Notes
+ <!-- add your own line below, one per teammate -->
+-hey it's heddie
+ hey it's hasmath
+-hey c'est mon deuxieme commit 
++hey c'est mon deuxieme commit
+ hey it's elodie
++
+$ git show 4cd72b6
+commit 4cd72b6438e9164b3a6222644923b04f0572dd24
+Author: Heddie BEN MARZOUK <heddie.benmarzouk.uvsq.fr>
+Date:   Mon Nov 16 17:47:14 2026 +0100
+
+    feat: add second team note from heddie
+
+diff --git a/protocol.md b/protocol.md
+index 6ab1606..c45b0ab 100644
+--- a/protocol.md
++++ b/protocol.md
+@@ -24,3 +24,4 @@ screening.
+ <!-- add your own line below, one per teammate -->
+ hey it's heddie
+ hey it's hasmath
++hey c'est mon deuxième commit 
+$ git pull --no-rebase --no-edit origin main
+Depuis https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+ * branch            main       -> FETCH_HEAD
+   8e32f37..7da22aa  main       -> origin/main
+Mise à jour 8e32f37..7da22aa
+Fast-forward
+ protocol.md        |  5 ++++-
+ worklog-Elodie.txt | 30 ++++++++++++++++++++++++++++++
+ 2 files changed, 34 insertions(+), 1 deletion(-)
+ create mode 100644 worklog-Elodie.txt
+$ head -6 protocol.md
+hey it's hasmath
+hey c'est mon deuxieme commit
+hey it's elodi# CRISPR Knockout Screening Protocol
+
+
+**Status:** Under review
+$ head -6 protocol.md
+hey it's hasmath
+hey c'est mon deuxieme commit
+hey it's elodi# CRISPR Knockout Screening Protocol
+
+
+**Status:** Under review
+$ git add protocol.md
+$ git commit -m fix: restore protocol title
+Sur la branche main
+Votre branche est à jour avec 'origin/main'.
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+	.Rhistory
+	worklog-heddie.txt
+
+aucune modification ajoutée à la validation mais des fichiers non suivis sont présents (utilisez "git add" pour les suivre)
+$ git push origin main
+Everything up-to-date
+$ head -6 protocol.md
+# CRISPR Knockout Screening Protocol
+
+
+**Status:** Under review
+
+## Overview
+$ git add protocol.md
+$ git commit -m fix: restore protocol title
+[main 75ca392] fix: restore protocol title
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+$ git push origin main
+To https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret.git
+   7da22aa..75ca392  main -> main
+$ head -6 protocol.md
+# CRISPR Knockout Screening Protocol
+
+**Status:** Under review
+
+## Overview
+Protocol for generating single-gene knockouts in HEK293 cells using
+$ git add protocol.md
+$ git commit -m fix: restore protocol title
+[main 9adaab7] fix: restore protocol title
+ 1 file changed, 1 deletion(-)
+$ git push origin main
+To https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret.git
+   75ca392..9adaab7  main -> main
+$ git status
+Sur la branche main
+Votre branche est à jour avec 'origin/main'.
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+	.Rhistory
+	worklog-heddie.txt
+
+aucune modification ajoutée à la validation mais des fichiers non suivis sont présents (utilisez "git add" pour les suivre)
+$ git log --oneline --graph -6
+* 9adaab7 fix: restore protocol title
+* 75ca392 fix: restore protocol title
+* 7da22aa docs: complete Elodie worklog
+* 70bf026 docs: update Elodie worklog
+* 05b380e docs: update Elodie worklog
+*   f7d80d6 merge: resolve personal branch conflict
+|\  
+$ git checkout -b feature/heddie-idea
+Basculement sur la nouvelle branche 'feature/heddie-idea'
+$ git branch
+* feature/heddie-idea
+  main
+$ git add protocol.md
+$ git commit -m feat: add reagent note from heddie
+[feature/heddie-idea 240e898] feat: add reagent note from heddie
+ 1 file changed, 1 insertion(+)
+$ git push origin feature/heddie-idea
+remote: 
+remote: Create a pull request for 'feature/heddie-idea' on GitHub by visiting:        
+remote:      https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret/pull/new/feature/heddie-idea        
+remote: 
+To https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret.git
+ * [new branch]      feature/heddie-idea -> feature/heddie-idea
+$ git switch main
+Basculement sur la branche 'main'
+Votre branche est à jour avec 'origin/main'.
+$ git status
+Sur la branche main
+Votre branche est à jour avec 'origin/main'.
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+	.Rhistory
+	worklog-heddie.txt
+
+aucune modification ajoutée à la validation mais des fichiers non suivis sont présents (utilisez "git add" pour les suivre)
+$ git switch feature/heddie-idea
+Basculement sur la branche 'feature/heddie-idea'
+$ git add protocol.md
+$ git commit -m docs: add local note for rebase practice
+[feature/heddie-idea 9320bcb] docs: add local note for rebase practice
+ 1 file changed, 1 insertion(+)
+$ git log --oneline main
+9adaab7 fix: restore protocol title
+75ca392 fix: restore protocol title
+7da22aa docs: complete Elodie worklog
+70bf026 docs: update Elodie worklog
+05b380e docs: update Elodie worklog
+f7d80d6 merge: resolve personal branch conflict
+7806364 docs: add Elodie's Git worklog
+9337af7 Merge branch 'main' of https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+e97ae91 merge: resolve status conflict
+db33003 Merge branch 'main' of https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+8e32f37 feat: restore team note from heddie
+44287c2 chore: update status for review
+2ce42c9 Revert "test: line to revert"
+f21dc1e test: line to revert
+6f679a3 Merge branch 'main' of https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+fbf4a5b Revert "feat: I added my name in the document"
+08a26eb chore: mark status as under review
+12c8f30 chore: bump status to draft v2
+c5d8d3d docs: add screening validation criteria
+8b47179 feat: improve screening quality control
+8c8b933 Revert "feat: add team note from Elodie"
+65fcce6 feat: add team note from Elodie
+13985e9 feat: modification of heddie's second commit from Hasmat
+4cd72b6 feat: add second team note from heddie
+97b432c update
+e470e9b feat: I added my name in the document
+531bfa7 Initial commit
+$ git log --oneline
+9320bcb docs: add local note for rebase practice
+240e898 feat: add reagent note from heddie
+9adaab7 fix: restore protocol title
+75ca392 fix: restore protocol title
+7da22aa docs: complete Elodie worklog
+70bf026 docs: update Elodie worklog
+05b380e docs: update Elodie worklog
+f7d80d6 merge: resolve personal branch conflict
+7806364 docs: add Elodie's Git worklog
+9337af7 Merge branch 'main' of https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+e97ae91 merge: resolve status conflict
+db33003 Merge branch 'main' of https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+8e32f37 feat: restore team note from heddie
+44287c2 chore: update status for review
+2ce42c9 Revert "test: line to revert"
+f21dc1e test: line to revert
+6f679a3 Merge branch 'main' of https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+fbf4a5b Revert "feat: I added my name in the document"
+08a26eb chore: mark status as under review
+12c8f30 chore: bump status to draft v2
+c5d8d3d docs: add screening validation criteria
+8b47179 feat: improve screening quality control
+8c8b933 Revert "feat: add team note from Elodie"
+65fcce6 feat: add team note from Elodie
+13985e9 feat: modification of heddie's second commit from Hasmat
+4cd72b6 feat: add second team note from heddie
+97b432c update
+e470e9b feat: I added my name in the document
+531bfa7 Initial commit
+$ git switch main
+Basculement sur la branche 'main'
+Votre branche est à jour avec 'origin/main'.
+$ git pull origin main
+Depuis https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+ * branch            main       -> FETCH_HEAD
+Déjà à jour.
+$ git switch feature/heddie-idea
+Basculement sur la branche 'feature/heddie-idea'
+$ git rebase main
+La branche courante feature/heddie-idea est à jour.
+$ git log --oneline --graph
+* 9320bcb docs: add local note for rebase practice
+* 240e898 feat: add reagent note from heddie
+* 9adaab7 fix: restore protocol title
+* 75ca392 fix: restore protocol title
+* 7da22aa docs: complete Elodie worklog
+* 70bf026 docs: update Elodie worklog
+* 05b380e docs: update Elodie worklog
+*   f7d80d6 merge: resolve personal branch conflict
+|\  
+| * c5d8d3d docs: add screening validation criteria
+| * 8b47179 feat: improve screening quality control
+* | 7806364 docs: add Elodie's Git worklog
+* |   9337af7 Merge branch 'main' of https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+|\ \  
+| * \   db33003 Merge branch 'main' of https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+| |\ \  
+| | * | 8e32f37 feat: restore team note from heddie
+| | * |   6f679a3 Merge branch 'main' of https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+| | |\ \  
+| | * | | fbf4a5b Revert "feat: I added my name in the document"
+| * | | | 2ce42c9 Revert "test: line to revert"
+| * | | | f21dc1e test: line to revert
+| |/ / /  
+* | | |   e97ae91 merge: resolve status conflict
+|\ \ \ \  
+| * | | | 44287c2 chore: update status for review
+| | |_|/  
+| |/| |   
+* | | | 08a26eb chore: mark status as under review
+| |_|/  
+|/| |   
+* | | 12c8f30 chore: bump status to draft v2
+|/ /  
+* / 8c8b933 Revert "feat: add team note from Elodie"
+|/  
+* 65fcce6 feat: add team note from Elodie
+* 13985e9 feat: modification of heddie's second commit from Hasmat
+* 4cd72b6 feat: add second team note from heddie
+* 97b432c update
+* e470e9b feat: I added my name in the document
+* 531bfa7 Initial commit
+$ git switch main
+Basculement sur la branche 'main'
+Votre branche est à jour avec 'origin/main'.
+$ git pull origin main
+Depuis https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+ * branch            main       -> FETCH_HEAD
+Déjà à jour.
+$ git merge feature/heddie-idea --no-edit
+Mise à jour 9adaab7..9320bcb
+Fast-forward
+ protocol.md | 2 ++
+ 1 file changed, 2 insertions(+)
+$ git push origin main
+To https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret.git
+   9adaab7..9320bcb  main -> main
+$ git push origin feature/heddie-idea
+To https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret.git
+   240e898..9320bcb  feature/heddie-idea -> feature/heddie-idea
+$ git log --oneline --graph --all
+* 9320bcb docs: add local note for rebase practice
+* 240e898 feat: add reagent note from heddie
+* 9adaab7 fix: restore protocol title
+* 75ca392 fix: restore protocol title
+* 7da22aa docs: complete Elodie worklog
+* 70bf026 docs: update Elodie worklog
+* 05b380e docs: update Elodie worklog
+*   f7d80d6 merge: resolve personal branch conflict
+|\  
+| * c5d8d3d docs: add screening validation criteria
+| * 8b47179 feat: improve screening quality control
+* | 7806364 docs: add Elodie's Git worklog
+* |   9337af7 Merge branch 'main' of https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+|\ \  
+| * \   db33003 Merge branch 'main' of https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+| |\ \  
+| | * | 8e32f37 feat: restore team note from heddie
+| | * |   6f679a3 Merge branch 'main' of https://github.com/SupBiotech-MSc2/Ben_Marzouk-Abdoul_Sattar-Floret
+| | |\ \  
+| | * | | fbf4a5b Revert "feat: I added my name in the document"
+| * | | | 2ce42c9 Revert "test: line to revert"
+| * | | | f21dc1e test: line to revert
+| |/ / /  
+* | | |   e97ae91 merge: resolve status conflict
+|\ \ \ \  
+| * | | | 44287c2 chore: update status for review
+| | |_|/  
+| |/| |   
+* | | | 08a26eb chore: mark status as under review
+| |_|/  
+|/| |   
+* | | 12c8f30 chore: bump status to draft v2
+|/ /  
+* / 8c8b933 Revert "feat: add team note from Elodie"
+|/  
+* 65fcce6 feat: add team note from Elodie
+* 13985e9 feat: modification of heddie's second commit from Hasmat
+* 4cd72b6 feat: add second team note from heddie
+* 97b432c update
+* e470e9b feat: I added my name in the document
+* 531bfa7 Initial commit
+$ git status
+Sur la branche main
+Votre branche est à jour avec 'origin/main'.
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+	.Rhistory
+	worklog-heddie.txt
+
+aucune modification ajoutée à la validation mais des fichiers non suivis sont présents (utilisez "git add" pour les suivre)
