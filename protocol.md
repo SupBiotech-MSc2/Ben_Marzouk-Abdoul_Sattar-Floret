@@ -1,6 +1,5 @@
 # CRISPR Knockout Screening Protocol
 
-
 **Status:** Under review
 
 ## Overview
