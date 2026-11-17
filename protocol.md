@@ -1,6 +1,4 @@
-hey it's hasmath
-hey c'est mon deuxieme commit
-hey it's elodi# CRISPR Knockout Screening Protocol
+# CRISPR Knockout Screening Protocol
 
 
 **Status:** Under review
