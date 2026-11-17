@@ -2,11 +2,8 @@ hey it's hasmath
 hey c'est mon deuxieme commit
 hey it's elodi# CRISPR Knockout Screening Protocol
 
-<<<<<<< HEAD
+
 **Status:** Under review
-=======
-**Status:** Under review by Driver 2
->>>>>>> feature/status-conflict
 
 ## Overview
 Protocol for generating single-gene knockouts in HEK293 cells using
@@ -31,3 +28,5 @@ screening.
 hey it's heddie
 hey it's hasmath
 hey c'est mon deuxieme commit
+- Elodie: Include an additional quality control step before analyzing knockout efficiency.
+- Elodie: Document the expected validation criteria for the screening.
